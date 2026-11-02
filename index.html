@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zonda</title>
+  <meta name="description" content="Zonda: salas, chat, llamadas y pantalla compartida, de dispositivo a dispositivo, sin servidores. Para Windows y Android.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zonda · salas sin servidores">
+  <meta property="og:description" content="Salas, chat, llamadas y pantalla compartida, de dispositivo a dispositivo. Windows y Android, gratis.">
+  <meta property="og:image" content="marca/logo.png">
+  <meta property="og:locale" content="es_AR">
+  <link rel="icon" type="image/png" href="marca/favicon.png">
+  <link rel="apple-touch-icon" href="marca/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap">
+  <style>
+    :root {
+      --app-bg: #ece4d6; --surface: #fbf8f2; --ink: #1d1d1d; --muted: #6f655a; --line: #d9cdb9;
+      --btn-on: #1d1d1d; --btn-on-ink: #fbf8f2; --btn-line: #cbbda6;
+      --shadow: 0 1px 2px rgba(0,0,0,.08), 0 4px 10px -4px rgba(0,0,0,.18);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) { color-scheme: dark; --app-bg: #16140f; --surface: #211e18; --ink: #f1ebe0; --muted: #a59b8c; --line: #3a342b; --btn-on: #f1ebe0; --btn-on-ink: #16140f; --btn-line: #4a4337; }
+    }
+    :root[data-theme="dark"] { color-scheme: dark; --app-bg: #16140f; --surface: #211e18; --ink: #f1ebe0; --muted: #a59b8c; --line: #3a342b; --btn-on: #f1ebe0; --btn-on-ink: #16140f; --btn-line: #4a4337; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: var(--app-bg); color: var(--ink); font-family: Figtree, system-ui, sans-serif; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    main { width: 100%; max-width: 420px; }
+    .card { background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); padding: 28px 22px 22px; text-align: center; }
+    .logo { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 10px; display: block; }
+    h1 { font-size: 28px; margin: 6px 0 4px; font-weight: 800; }
+    .sub { color: var(--muted); margin: 0 0 18px; line-height: 1.45; }
+    h2 { font-size: 15px; margin: 22px 0 4px; font-weight: 800; text-align: left; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 52px; border-radius: 14px; border: 0; background: var(--btn-on); color: var(--btn-on-ink); font: 700 17px Figtree, system-ui, sans-serif; text-decoration: none; margin-top: 10px; }
+    .btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--btn-line); font-size: 15px; min-height: 46px; }
+    p.note { color: var(--muted); font-size: 14px; line-height: 1.45; margin: 8px 0 0; text-align: left; }
+    .ver { color: var(--muted); font-size: 12px; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <img class="logo" src="marca/logo.png" alt="Zonda">
+      <h1>Zonda</h1>
+      <p class="sub">Salas, chat, llamadas y pantalla compartida, de dispositivo a dispositivo. Sin servidores, sin cuentas, sin publicidad.</p>
+
+      <h2>Windows</h2>
+      <a class="btn" href="zonda-windows.zip" download="zonda-windows.zip">Descargar para Windows</a>
+      <p class="note">Descomprimí la carpeta donde quieras y abrí <b>zonda.exe</b>. Si Windows avisa que la app es nueva, tocá «Más información» → «Ejecutar de todas formas».</p>
+
+      <h2>Android</h2>
+      <a class="btn" href="zonda-android.apk" download="zonda-android.apk" type="application/vnd.android.package-archive">Descargar para Android</a>
+      <a class="btn ghost" href="zonda-android-32bit.apk" download="zonda-android-32bit.apk" type="application/vnd.android.package-archive">Teléfono viejo: versión de 32 bits</a>
+      <p class="note">Abrí el archivo descargado y permití instalar desde esta fuente cuando el teléfono lo pida. Las actualizaciones se avisan solas dentro de la app.</p>
+
+      <p class="ver">Versión <span id="v">—</span></p>
+    </div>
+  </main>
+  <script>
+    fetch('version.txt?t=' + Date.now()).then(r => r.ok ? r.text() : '').then(v => { if (v.trim()) document.getElementById('v').textContent = v.trim(); }).catch(() => {});
+  </script>
+</body>
+</html>

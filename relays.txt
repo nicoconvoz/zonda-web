@@ -1,0 +1,1 @@
+RL1 by=704f0424bbde3f368c0bce7bd28d7a7c7f9ae88e589d9c51a0a2505d31be121a t=1793647584096 list=wss://relay.damus.io,wss://nos.lol,wss://relay.primal.net,wss://relay.snort.social sig=8344ae0dcd81251877dc4115f0bf5f5443233ad2025f80677b4bde3b7af3891731a7373aa85afa6f103f953ae2db616df4fece4f5cbb68acfc5caca77fcdfb04

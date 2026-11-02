@@ -1,0 +1,5 @@
+*.apk -delta binary
+*.aab -delta binary
+*.zip -delta binary
+*.png -delta binary
+*.jpg -delta binary
