@@ -3,3 +3,4 @@
 *.zip -delta binary
 *.png -delta binary
 *.jpg -delta binary
+*.exe -delta binary
